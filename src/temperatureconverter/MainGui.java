@@ -64,6 +64,7 @@ public class MainGui extends JFrame implements ActionListener {
         double fahrenheit = Double.parseDouble(inputString);
         double celcius = (((fahrenheit - 32)*5)/9);
         
+        //fahrenheit = Double.valueOf(inputString);
         lblOutput.setText(NumberFormat.getInstance().format(celcius));
         
     }

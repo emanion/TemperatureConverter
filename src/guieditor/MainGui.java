@@ -84,10 +84,12 @@ public class MainGui extends javax.swing.JFrame {
 
     private void btnConvertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConvertActionPerformed
         
-        
+        TemperatureConverterService tempConverterService = 
+                new TemperatureConverterService();
         
         String inputString = txtInput.getText();
         double fahrenheit = Double.parseDouble(inputString);
+        //fahrenheit = Double.valueOf(inputString);
         double celcius = (((fahrenheit - 32)*5)/9);
 
         
