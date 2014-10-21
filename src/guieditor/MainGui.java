@@ -131,12 +131,24 @@ public class MainGui extends javax.swing.JFrame {
                 new TemperatureConverterService();
         
         String inputString = txtInput.getText();
-        double fahrenheit = Double.parseDouble(inputString);
+        double inputTemperature = Double.parseDouble(inputString);
         //fahrenheit = Double.valueOf(inputString);
+        
+        double answer = 32;
+        /* do the following in the TemperatureConverterService class
         double celcius = (((fahrenheit - 32)*5)/9);
+        */
+        //check for which radioButton was clicked.
+        if (this.Fahrenheit.isSelected())  //get Celcius from Fahrenheit
+        {
+            answer = tempConverterService.getCelciusFromFahrenheit(inputTemperature);
+        }else                              //get Farhenheit from Celcius
+        {
+            answer = tempConverterService.getFahrenheitFromCelcius(inputTemperature);
+        }
 
         
-        lblOutput.setText(NumberFormat.getInstance().format(celcius));
+        lblOutput.setText(NumberFormat.getInstance().format(answer));
         
         
     }//GEN-LAST:event_btnConvertActionPerformed
